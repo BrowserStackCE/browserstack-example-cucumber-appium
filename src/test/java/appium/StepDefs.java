@@ -34,7 +34,7 @@ public class StepDefs{
         caps.setCapability("os_version", "8.0");
         caps.setCapability("name", "parallel_test");
         caps.setCapability("build", "Cucumber Parallel Execution");
-        caps.setCapability("app", "bs://72ac75bf8a391aed7d11d4a512ba43d0495ac3ec");
+        caps.setCapability("app", "BROWSERSTACK_APP_ID");
 
         driver = new AndroidDriver(new URL(URL), caps);
 
