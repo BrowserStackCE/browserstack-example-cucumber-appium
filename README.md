@@ -24,7 +24,7 @@ This repo demonstrates a simple way of running your Appium Java Cucumber tests o
   -F "file=@/path/to/apk/file"
   ```
   If you want to use a constant value to specify the application under test and don’t want to modify your test scripts after every app upload, you can define a [custom ID](https://www.browserstack.com/docs/app-automate/appium/upload-app-define-custom-id) for your app. 
-* Tha app used in this repo can be found [here](/Users/nithyamani/Desktop/BrowserStackCE repo migration/cucumber-appium-demo/src/test/resources/app/WikipediaSample.apk).
+* Tha app used in this repo can be found [here](https://github.com/nithyamn/cucumber-appium-demo/blob/main/src/test/resources/app/WikipediaSample.apk).
 * You can view your test results on the [BrowserStack App Automate dashboard](https://app-automate.browserstack.com/)
 * To test on a different set of browsers, check out our [platform configurator](https://www.browserstack.com/docs/app-automate/appium/set-up-tests/select-devices).
 
