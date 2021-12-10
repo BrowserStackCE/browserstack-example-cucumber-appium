@@ -1,6 +1,6 @@
 ## BrowserStack Appium Java Cucumber Sample
 
-Thie repo demonstrates a simple way of running your Appium Java Cucumber tests on BrowserStack. This repo uses Testng as the runner.
+This repo demonstrates a simple way of running your Appium Java Cucumber tests on BrowserStack. This repo uses Testng as the runner.
 
 ## Pre-requisites
 
