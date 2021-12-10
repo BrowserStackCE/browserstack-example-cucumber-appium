@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Single" data-provider-thread-count="4" parallel="classes">
+    <test name="SingleTest">
+<!--parameters can be configured for more dynamic approach and defining the caps in a JSON file-->
+        <classes>
+            <class name="appium.Runner1"/>
+<!--            <class name="appium.Runner2"/>-->
+<!--            <class name="appium.Runner3"/>-->
+<!--We can select the no.of Runners that we want to execute-->
+        </classes>
+    </test>
+</suite>
