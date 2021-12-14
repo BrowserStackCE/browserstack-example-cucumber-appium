@@ -1,4 +1,7 @@
-## BrowserStack Appium Java Cucumber Sample
+![BrowserStack Logo](https://camo.githubusercontent.com/09765325129b9ca76d770b128dbe30665379b7f2915d9b60bf57fc44d9920305/68747470733a2f2f7777772e62726f77736572737461636b2e636f6d2f696d616765732f7374617469632f6865616465722d6c6f676f2e6a7067)
+
+
+# BrowserStack Example - Appium Java Cucumber
 
 This repo demonstrates a simple way of running your Appium Java Cucumber tests on BrowserStack. This repo uses Testng as the runner.
 
