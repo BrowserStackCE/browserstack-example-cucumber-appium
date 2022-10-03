@@ -5,7 +5,7 @@ import org.testng.annotations.DataProvider;
 import io.cucumber.testng.CucumberOptions;
 
 //This runner will run both the feature files (all tags)
-@CucumberOptions(plugin = {"pretty"},features = "src/test/resources/features", glue = "appium")
+@CucumberOptions(plugin = {"pretty"},features = "src/test/resources/features/bsDemo.feature", glue = "appium")
 public class Runner1 extends AbstractTestNGCucumberTests {
 
     @Override
