@@ -26,7 +26,8 @@ public class StepDefs {
     DesiredCapabilities caps;
     public final String USERNAME = System.getenv("BROWSERSTACK_USERNAME");
     public final String ACCESS_KEY = System.getenv("BROWSERSTACK_ACCESS_KEY");
-    public final String APP_ID = System.getenv("BROWSERSTACK_APP_ID");
+    public final String ANDROID_APP_ID = System.getenv("BROWSERSTACK_ANDROID_APP_ID");
+    public final String IOS_APP_ID = System.getenv("BROWSERSTACK_IOS_APP_ID");
     public final String URL = "https://" + USERNAME + ":" + ACCESS_KEY + "@hub-cloud.browserstack.com/wd/hub";
     public JavascriptExecutor jse;
     public AppiumDriver<MobileElement> driver;
@@ -41,12 +42,8 @@ public class StepDefs {
             caps.setCapability("osVersion", readPropertiesFile("android_os_version"));
             caps.setCapability("name", readPropertiesFile("android_testName")+" "+readPropertiesFile("android_device"));
             caps.setCapability("build", readPropertiesFile("android_build"));
-            if(APP_ID!=null){
-                System.out.println("Setting from Environment variable");
-                caps.setCapability("app", "bs://96c11ded5deb147ec2e6977c1a940d1f0f17e14a");
-            }
-            else
-                caps.setCapability("app", "browserStackDemoApp");
+            System.out.println("Setting from Environment variable");
+            caps.setCapability("app", ANDROID_APP_ID);
             driver = new AndroidDriver<MobileElement>(new URL(URL), caps);
         }
         else if(readPropertiesFile("platformName").equals("iOS"))
@@ -55,12 +52,8 @@ public class StepDefs {
             caps.setCapability("os_version", readPropertiesFile("iOS_os_version"));
             caps.setCapability("name", readPropertiesFile("iOS_testName")+" "+readPropertiesFile("iOS_device"));
             caps.setCapability("build", readPropertiesFile("iOS_build"));
-            if(APP_ID!=null){
-                System.out.println("Setting from Environment variable");
-                caps.setCapability("app", "bs://1ec11589be09b2dc9190f9018cbb0a7cf417d7b3");
-            }
-            else
-                caps.setCapability("app", "browserStackDemoApp");
+            System.out.println("Setting from Environment variable");
+            caps.setCapability("app", IOS_APP_ID);
             driver = new IOSDriver<MobileElement>(new URL(URL), caps);
         }
 
@@ -84,16 +77,15 @@ public class StepDefs {
     }
 
     @Given("Login to demo App")
-    public void click_on_search_box() throws MalformedURLException, InterruptedException {
+    public void launchApp() throws MalformedURLException, InterruptedException {
         driver.findElementByAccessibilityId("menu").click();
         System.out.println("BrowserStack demo app is launched, menu clicked");
 
         driver.findElementByAccessibilityId("nav-signin").click();
         System.out.println("Sign in is clicked");
-        System.out.println("Given executed");
     }
     @When("Login credentials entered")
-    public void is_searched() throws InterruptedException {
+    public void loginApp() throws InterruptedException {
         driver.findElementByAccessibilityId("username-input").click();
         driver.findElement(By.xpath("//XCUIElementTypePickerWheel[@value='Accepted usernames are']")).sendKeys(new CharSequence[]{"fav_user"});
         driver.findElement(By.name("done_button")).click();
@@ -107,19 +99,10 @@ public class StepDefs {
         Thread.sleep(2000);
         driver.findElementByAccessibilityId("login-btn").click();
         Thread.sleep(2000);
-        System.out.println("when executed");
     }
     @Then("Login is successful")
-    public void display_Products() {
-       /* List<AndroidElement> allProductsName = driver.findElementsByClassName("android.widget.TextView");
-        Assert.assertTrue(allProductsName.size() > 0);
-        if(allProductsName.size() > 0) {
-            jse.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"passed\", \"reason\": \"Validated\"}}");
-        }
-        else {
-            jse.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"failed\", \"reason\": \"Not Validated\"}}");
-        }*/
-        System.out.println("then executed");
+    public void loginSuccess() {
+       assert(driver.findElementByAccessibilityId("filter-btn").isDisplayed()) : "Login is not successful";
     }
 
     @After
