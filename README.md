@@ -32,8 +32,8 @@ This repo demonstrates a simple way of running your Appium Java Cucumber tests o
         export BROWSERSTACK_IOS_APP_ID=<bif uploaded iOS app>
         ````
       If you want to use a constant value to specify the application under test and don’t want to modify your test scripts after every app upload, you can define a [custom ID](https://www.browserstack.com/docs/app-automate/appium/upload-app-define-custom-id) for your app. 
-* Tha Android app used in this repo can be found [here](https://github.com/nithyamn/cucumber-appium-demo/blob/main/src/test/resources/app/browserstack-demoapp.apk).
-* Tha iOS app used in this repo can be found [here](https://github.com/nithyamn/cucumber-appium-demo/blob/main/src/test/resources/app/browserstack-demoapp.ipa).
+* Tha Android app used in this repo can be found [here](https://github.com/BrowserStackCE/browserstack-example-cucumber-appium/blob/a47aa31e8bf000b26a38c2a0577d84d716995b5a/src/test/resources/app/browserstack-demoapp.apk).
+* Tha iOS app used in this repo can be found [here](https://github.com/BrowserStackCE/browserstack-example-cucumber-appium/blob/a47aa31e8bf000b26a38c2a0577d84d716995b5a/src/test/resources/app/browserstack-demoapp.ipa).
 * You can view your test results on the [BrowserStack App Automate dashboard](https://app-automate.browserstack.com/)
 * To test on a different set of browsers, check out our [platform configurator](https://www.browserstack.com/docs/app-automate/appium/set-up-tests/select-devices).
 
