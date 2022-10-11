@@ -13,6 +13,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.ITestResult;
 
 
 import java.io.*;
@@ -102,12 +103,19 @@ public class StepDefs {
     }
     @Then("Login is successful")
     public void loginSuccess() {
-       assert(driver.findElementByAccessibilityId("filter-btn").isDisplayed()) : "Login is not successful";
+       if(driver.findElementByAccessibilityId("filter-btn").isDisplayed())
+       {
+
+           jse.executeScript("browserstack_executor: {\"action\": \"setSessionName\", \"arguments\": {\"status\": \"passed\", \"reason\": \"Test Passed!\"}}");
+       }
+       else
+           jse.executeScript("browserstack_executor: {\"action\": \"setSessionName\", \"arguments\": {\"status\": \"failed\", \"reason\": \"Test Failed!\"}}");
+
     }
 
     @After
-    public void teardown(Scenario scenario){
-        jse.executeScript("browserstack_executor: {\"action\": \"setSessionName\", \"arguments\": {\"name\":\""+scenario.getName()+"\" }}");
+    public void teardown(){
+
         driver.quit();
     }
 }
