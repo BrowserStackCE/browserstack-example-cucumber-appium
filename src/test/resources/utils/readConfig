@@ -1,0 +1,9 @@
+iOS_os_version=15
+iOS_testName=Single test -iOS
+iOS_build=iOSSingleTest
+iOS_device=iPhone 11
+android_os_version=10.0
+android_testName=Single test -Android
+android_build=androidSingleTest
+android_device=Samsung Galaxy S20 Plus
+platformName=iOS

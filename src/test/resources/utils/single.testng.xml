@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SingleRun" data-provider-thread-count="4" parallel="classes">
+
+    <test name="browserStackTest">
+        <classes>
+            <class name="appium.Runner1"/>
+            <class name="appium.Runner2"/>
+        </classes>
+    </test>
+</suite>

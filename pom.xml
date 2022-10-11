@@ -68,7 +68,7 @@
     </build>
     <profiles>
         <profile>
-            <id>single</id>
+            <id>SingleRun</id>
             <build>
                 <plugins>
                     <plugin>
@@ -76,7 +76,7 @@
                         <artifactId>maven-surefire-plugin</artifactId>
                         <configuration>
                             <suiteXmlFiles>
-                                <suiteXmlFile>config/wiki-search.testng.xml</suiteXmlFile>
+                                <suiteXmlFile>src/test/resources/utils/single.testng.xml</suiteXmlFile>
                             </suiteXmlFiles>
                         </configuration>
                     </plugin>
